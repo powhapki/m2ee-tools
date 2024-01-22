@@ -26,6 +26,15 @@ The deployment tools, written in python are available in a public apt repository
 
     deb http://packages.mendix.com/platform/debian/ buster main contrib non-free
 
+- 아래와 같은 과정을 통해 명령어로 추가 가능.
+  """
+  $ sudo apt update
+  $ sudo apt install software-properties-common # add-apt-repository utility is included
+  $ sudo add-apt-repository "deb http://packages.mendix.com/platform/debian/ buster main contrib non-free"
+  """
+
+
+
 ### GPG keyring
 
 In order to trust this repository, you have to import the GPG keys used by Mendix to sign the Release file.
@@ -37,7 +46,7 @@ Step 1: Install the current public key manually, using https to download it:
 
 Step 2: Fetch the package lists. This should succeed without any GPG verification error now.
 
-    # apt-get update
+    # apt updatea
     [...]
     Get:5 http://packages.mendix.com/platform/debian buster InRelease [10.9 kB]
     [...]
@@ -93,6 +102,10 @@ your new server.
 
 For Debian, the OpenJDK JRE that is packaged in Debian can be used. This is for
 example the openjdk-11-jre-headless package.
+
+"""
+$ sudo apt-get install openjdk-17-jdk
+"""
 
 If you have multiple JRE packages installed, make sure you have the preferred
 one by default in your path. Use update-java-alternatives to choose which java
